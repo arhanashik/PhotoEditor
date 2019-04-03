@@ -46,9 +46,6 @@ dependencies {
 
 //google
 dependencies {
-    //instead of support design
-    implementation "com.google.android.material:material:$rootProject.material"
-
     //gson
     implementation "com.google.code.gson:gson:$rootProject.gson"
 }
