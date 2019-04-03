@@ -1,4 +1,5 @@
 # DEMO
+[![](https://jitpack.io/v/arhanashik/base.svg)](https://jitpack.io/#arhanashik/base)
 
 ## What's it
 This is a simple framework for my projects for setting things up before staring any project. It's my own structure which
