@@ -8,17 +8,21 @@ I follow for my projects. Common dependencies and helper files are added for fas
 ## Installation
 ### Using with gradle
 1. **Step 1** Add it in your root build.gradle at the end of repositories:
+```
 allprojects {
     repositories {
         ...
         maven { url 'https://jitpack.io' }
     }
 }
+```
 
 2. **Step 2** Add the dependency to your app level build.gradle
+```
 dependencies {
     implementation 'com.github.arhanashik:base:1.0.0-beta'
 }
+```
 
 ## Using as a module
 1. Clone the repo
