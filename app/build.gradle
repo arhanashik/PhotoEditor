@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
-apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion target_sdk
@@ -34,7 +33,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "androidx.appcompat:appcompat:$rootProject.appcompat"
+    implementation "com.android.support:appcompat-v7:$rootProject.appcompat"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraint"
     //instead of support v4
     implementation "androidx.legacy:legacy-support-v4:$rootProject.support"
@@ -55,18 +54,15 @@ dependencies {
     //palette
     // implementation "androidx.palette:palette:$rootProject.support"
 
-    //kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
     //multi-dex
     implementation "androidx.multidex:multidex:$rootProject.multidex"
+
+    //kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
 // google
 dependencies {
-    //instead of support design
-    implementation "com.google.android.material:material:$rootProject.material"
-
     // google sign in
     // implementation "com.google.android.gms:play-services-auth:$rootProject.play_service"
 
@@ -75,9 +71,6 @@ dependencies {
 
     // firebase core + analytics
     // implementation "com.google.firebase:firebase-core:$rootProject.firebase_core"
-
-    // gson
-    // implementation "com.google.code.gson:gson:$rootProject.gson"
 }
 
 // facebook
@@ -87,17 +80,13 @@ dependencies {
 
 // module
 dependencies {
-
+    implementation project(":base")
 }
 
 // 3rd party
 dependencies {
     // circle image
     // implementation "com.mikhaellopez:circularimageview:$rootProject.circularimageview"
-
-    //image loader
-    // implementation "com.github.bumptech.glide:glide:$rootProject.glide"
-    // kapt "com.github.bumptech.glide:compiler:$rootProject.glide"
 
     //image cropper
     // implementation "com.github.yalantis:ucrop:$rootProject.ucrop"
@@ -114,11 +103,4 @@ dependencies {
 
     //logger
     implementation "com.jakewharton.timber:timber:$rootProject.timber"
-}
-
-// testing libs
-dependencies {
-    testImplementation "junit:junit:$rootProject.junit"
-    androidTestImplementation "androidx.test:runner:$rootProject.runner"
-    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.espresso"
 }

@@ -1,4 +1,4 @@
-package com.workfort.demo.util.view
+package com.workfort.base.util.view
 
 import android.app.DatePickerDialog
 import android.app.Dialog
@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 import java.util.*
 
-class JavaDatePickerDialog : DialogFragment() {
+class CustomDatePickerDialog : DialogFragment() {
     private var onDateSetListener: DatePickerDialog.OnDateSetListener? = null
 
     lateinit var date: Date
@@ -19,8 +19,8 @@ class JavaDatePickerDialog : DialogFragment() {
 
         private const val EXTRA_DATE = "date"
 
-        fun newInstance(date: Date? = null): JavaDatePickerDialog {
-            val dialog = JavaDatePickerDialog()
+        fun newInstance(date: Date? = null): CustomDatePickerDialog {
+            val dialog = CustomDatePickerDialog()
             val args = Bundle().apply {
                 putSerializable(EXTRA_DATE, date)
                 /*

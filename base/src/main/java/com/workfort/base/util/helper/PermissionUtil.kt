@@ -1,4 +1,4 @@
-package com.workfort.demo.util.helper
+package com.workfort.base.util.helper
 
 import android.app.Activity
 import android.content.Context
@@ -12,7 +12,8 @@ import androidx.fragment.app.Fragment
 class PermissionUtil private constructor() {
 
     fun request(activity: Activity, vararg permissions: String): Boolean {
-        return request(activity, REQUEST_CODE_PERMISSION_DEFAULT, *permissions)
+        return request(activity,
+            REQUEST_CODE_PERMISSION_DEFAULT, *permissions)
     }
 
     fun request(activity: Activity?, requestCode: Int, vararg permissions: String): Boolean {
@@ -39,7 +40,8 @@ class PermissionUtil private constructor() {
     }
 
     fun request(fragment: Fragment, vararg permissions: String): Boolean {
-        return request(fragment, REQUEST_CODE_PERMISSION_DEFAULT, *permissions)
+        return request(fragment,
+            REQUEST_CODE_PERMISSION_DEFAULT, *permissions)
     }
 
     fun request(fragment: Fragment?, requestCode: Int, vararg permissions: String): Boolean {
@@ -77,13 +79,14 @@ class PermissionUtil private constructor() {
     }
 
     companion object {
-        val REQUEST_CODE_PERMISSION_DEFAULT = 1
-        val REQUEST_CODE_STORAGE = 2
+        const val REQUEST_CODE_PERMISSION_DEFAULT = 1
+
         private var invokePermission: PermissionUtil? = null
 
         fun on(): PermissionUtil {
             if (invokePermission == null) {
-                invokePermission = PermissionUtil()
+                invokePermission =
+                    PermissionUtil()
             }
 
             return invokePermission as PermissionUtil

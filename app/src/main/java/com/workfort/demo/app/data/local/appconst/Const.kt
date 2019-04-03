@@ -10,15 +10,15 @@ package com.workfort.demo.app.data.local.appconst;
  *  ****************************************************************************
  */
 
-public interface Const {
-    interface RequestCode {
+object Const {
+    object RequestCode {
     }
 
-    interface Key {
+    object Key {
     }
 
     // Prefix
-    String PREFIX_IMAGE = "IMG_";
+    const val PREFIX_IMAGE = "IMG_"
     // Postfix
-    String SUFFIX_IMAGE = ".jpg";
+    const val SUFFIX_IMAGE = ".jpg"
 }

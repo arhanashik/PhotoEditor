@@ -18,8 +18,6 @@ package com.workfort.demo.util.helper;
 //import androidx.core.content.FileProvider;
 //import androidx.exifinterface.media.ExifInterface;
 //import androidx.fragment.app.Fragment;
-//import com.workfort.demo.R;
-//import com.workfort.demo.app.data.local.appconst.Const;
 //
 //import java.io.File;
 //import java.io.FileNotFoundException;

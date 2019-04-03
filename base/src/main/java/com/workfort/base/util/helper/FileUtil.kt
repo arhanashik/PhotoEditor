@@ -1,9 +1,9 @@
-package com.workfort.demo.util.helper
+package com.workfort.base.util.helper
 
 import android.graphics.Bitmap
 import android.net.Uri
 import android.provider.MediaStore
-import com.workfort.demo.DemoApp
+import com.workfort.base.BaseApp
 import java.io.File
 import java.io.FileOutputStream
 import java.util.*
@@ -11,7 +11,7 @@ import java.util.*
 class FileUtil {
     fun saveBitmap(bitmap: Bitmap): Uri {
         val id = Random().nextInt(10000)
-        val file = File(DemoApp.getApplicationContext().cacheDir, "WW_$id.JPEG")
+        val file = File(BaseApp.getApplicationContext().cacheDir, "$id.JPEG")
 
         val fos = FileOutputStream(file)
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fos)
@@ -22,12 +22,12 @@ class FileUtil {
     }
 
     fun createEmptyFile(fileName: String): File {
-        return File(DemoApp.getApplicationContext().cacheDir, fileName)
+        return File(BaseApp.getApplicationContext().cacheDir, fileName)
     }
 
     fun getPath(uri: Uri): String? {
         val projection = arrayOf(MediaStore.Images.Media.DATA)
-        val cursor = DemoApp.getApplicationContext()
+        val cursor = BaseApp.getApplicationContext()
             .contentResolver.query(uri, projection, null, null, null) ?: return null
         cursor.moveToFirst()
         cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)).also {
@@ -37,6 +37,6 @@ class FileUtil {
     }
 
     fun getFileType(uri: Uri): String? {
-        return DemoApp.getApplicationContext().contentResolver?.getType(uri)
+        return BaseApp.getApplicationContext().contentResolver?.getType(uri)
     }
 }

@@ -1,4 +1,4 @@
-package com.workfort.demo.util.helper
+package com.workfort.base.util.helper
 
 import android.os.Handler
 import android.os.Looper

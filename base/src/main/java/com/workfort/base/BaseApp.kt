@@ -1,28 +1,17 @@
-package com.workfort.demo
+package com.workfort.base
 
 import android.content.Context
 import androidx.multidex.MultiDex
-import com.workfort.base.BaseApp
+import androidx.multidex.MultiDexApplication
 import timber.log.Timber
 
-/*
-*  ****************************************************************************
-*  * Created by : Arhan Ashik on 12/11/2018 at 4:18 PM.
-*  * Email : ashik.pstu.cse@gmail.com
-*  * 
-*  * Last edited by : Arhan Ashik on 12/11/2018.
-*  * 
-*  * Last Reviewed by : <Reviewer Name> on <mm/dd/yy>  
-*  ****************************************************************************
-*/
-
-class DemoApp  : BaseApp() {
+open class BaseApp : MultiDexApplication() {
     init {
         sInstance = this
     }
 
     companion object {
-        private lateinit var sInstance: DemoApp
+        private lateinit var sInstance: BaseApp
 
         fun getApplicationContext(): Context {
             return sInstance.applicationContext

@@ -1,14 +1,13 @@
-package com.workfort.demo.util.helper
+package com.workfort.base.util.helper
 
 import android.content.Context
 import androidx.appcompat.widget.PopupMenu
 import android.content.pm.PackageManager
 import android.util.Base64
-import com.workfort.demo.DemoApp
+import com.workfort.base.BaseApp
 import timber.log.Timber
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
-
 
 class AndroidUtil {
     data class DisplayParams(val width: Int, val height: Int)
@@ -41,8 +40,8 @@ class AndroidUtil {
 
     fun getKeyHash() {
         try {
-            val info = DemoApp.getApplicationContext().packageManager
-                .getPackageInfo(DemoApp.getApplicationContext().packageName, PackageManager.GET_SIGNATURES)
+            val info = BaseApp.getApplicationContext().packageManager
+                .getPackageInfo(BaseApp.getApplicationContext().packageName, PackageManager.GET_SIGNATURES)
             for (signature in info.signatures) {
                 val md = MessageDigest.getInstance("SHA")
                 md.update(signature.toByteArray())
