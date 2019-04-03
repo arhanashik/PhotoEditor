@@ -9,7 +9,7 @@ import java.util.ArrayList
 
 import androidx.fragment.app.Fragment
 
-class PermissionUtil private constructor() {
+open class PermissionUtil private constructor() {
 
     fun request(activity: Activity, vararg permissions: String): Boolean {
         return request(activity,

@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.fragment.app.DialogFragment
 import java.util.*
 
-class CustomDatePickerDialog : DialogFragment() {
+open class CustomDatePickerDialog : DialogFragment() {
     private var onDateSetListener: DatePickerDialog.OnDateSetListener? = null
 
     lateinit var date: Date

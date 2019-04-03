@@ -9,7 +9,7 @@ import timber.log.Timber
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
 
-class AndroidUtil {
+open class AndroidUtil {
     data class DisplayParams(val width: Int, val height: Int)
 
     fun getDisplayParams(context: Context): DisplayParams {

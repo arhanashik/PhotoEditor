@@ -31,7 +31,7 @@ import com.workfort.base.R
 *  ****************************************************************************
 */
 
-class ImageLoader {
+open class ImageLoader {
     companion object {
         fun load(location: Int, imageView: ImageView) {
             val requestOptions = RequestOptions()

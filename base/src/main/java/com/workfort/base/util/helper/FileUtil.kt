@@ -8,7 +8,7 @@ import java.io.File
 import java.io.FileOutputStream
 import java.util.*
 
-class FileUtil {
+open class FileUtil {
     fun saveBitmap(bitmap: Bitmap): Uri {
         val id = Random().nextInt(10000)
         val file = File(BaseApp.getApplicationContext().cacheDir, "$id.JPEG")

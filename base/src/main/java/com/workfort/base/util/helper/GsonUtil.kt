@@ -2,7 +2,7 @@ package com.workfort.base.util.helper
 
 import com.google.gson.Gson
 
-class GsonUtil {
+open class GsonUtil {
     fun toJson(obj: Any): String {
         return Gson().toJson(obj)
     }
