@@ -2,7 +2,6 @@ package com.workfort.demo.app.data.local.pref
 
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
-import com.workfort.demo.DemoApp
 
 object PrefUtil {
     val preferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(

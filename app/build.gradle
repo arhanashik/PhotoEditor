@@ -85,6 +85,12 @@ dependencies {
 
 // 3rd party
 dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "androidx.appcompat:appcompat:$rootProject.appcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraint"
+    //instead of support v4
+    implementation "androidx.legacy:legacy-support-v4:$rootProject.support"
+
     // circle image
     // implementation "com.mikhaellopez:circularimageview:$rootProject.circularimageview"
 
