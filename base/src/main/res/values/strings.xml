@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">base</string>
-
-    <string name="file_provider_authority" translatable="false">com.workfort.base.fileprovider</string>
-</resources>

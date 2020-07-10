@@ -6,7 +6,7 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion target_sdk
     defaultConfig {
-        applicationId "com.workfort.demo"
+        applicationId "com.workfort.photoeditor"
         minSdkVersion min_sdk
         targetSdkVersion target_sdk
         versionCode version_code
@@ -39,6 +39,13 @@ dependencies {
     //instead of support v4
     implementation "androidx.legacy:legacy-support-v4:$rootProject.support"
 
+    // LiveData + ViewModel
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.lifecycle"
+
+    // card view and recycler view
+    implementation "androidx.cardview:cardview:$rootProject.support"
+    implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerview"
+
     //multi-dex
     implementation "androidx.multidex:multidex:$rootProject.multidex"
 
@@ -46,28 +53,40 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 
+//base
+dependencies {
+    implementation "com.github.arhanashik:base:$rootProject.base"
+}
+
+//google
+dependencies {
+    //instead of support design
+    implementation "com.google.android.material:material:$rootProject.material"
+}
+
 //module
 dependencies {
-    implementation project(":base")
+    implementation project(":shiftcolorpicker")
+    implementation project(":photoeditor")
 }
 
 //3rd party
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "androidx.appcompat:appcompat:$rootProject.appcompat"
-    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraint"
-    //instead of support v4
-    implementation "androidx.legacy:legacy-support-v4:$rootProject.support"
-
     // circle image
     //implementation "com.mikhaellopez:circularimageview:$rootProject.circularimageview"
 
     //image cropper
-    // implementation "com.github.yalantis:ucrop:$rootProject.ucrop"
+    implementation "com.github.yalantis:ucrop:$rootProject.ucrop"
+
+    //image picker
+    implementation  "com.fxn769:pix:$rootProject.pix"
+
+    //photo editor
+    //implementation "ja.burhanrashid52:photoeditor:$rootProject.photoeditor"
 
     //rx java
-    // implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava"
-    // implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid"
+    //implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava"
+    //implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid"
 
     //networking lib
     // implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"

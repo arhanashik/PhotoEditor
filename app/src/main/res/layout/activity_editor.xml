@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/black">
+
+        <ja.burhanrashid52.photoeditor.PhotoEditorView
+                android:id="@+id/photo_editor_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:photo_src="@drawable/img_splash"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/control_bg"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_text"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_space"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/color_picker"
+                app:layout_constraintBottom_toTopOf="@+id/control_bg">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/txt_18"
+                    android:gravity="center"
+                    android:inputType="text"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_emojis"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clipToPadding="false"
+                android:background="@color/colorPrimaryLightPix"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/color_picker"
+                app:layout_constraintBottom_toTopOf="@+id/control_bg"/>
+
+        <uz.shift.colorpicker.LineColorPicker
+                android:id="@+id/color_picker"
+                android:layout_width="40dp"
+                android:layout_height="0dp"
+                app:orientation="vertical"
+                app:colors="@array/picker_colors"
+                app:selectedColorIndex="3"
+                android:visibility="gone"
+                tools:visibility="visible"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/control_bg"/>
+
+        <View
+            android:id="@+id/control_bg"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/btn_brush"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_brush"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/txt_14"
+            android:gravity="center"
+            android:drawableTop="@drawable/ic_brush"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/control_bg"
+            app:layout_constraintEnd_toStartOf="@+id/btn_text"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+                android:id="@+id/btn_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_text"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/txt_14"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_text"
+                app:layout_constraintStart_toEndOf="@+id/btn_brush"
+                app:layout_constraintTop_toTopOf="@+id/control_bg"
+                app:layout_constraintEnd_toStartOf="@+id/btn_eraser"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+                android:id="@+id/btn_eraser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_eraser"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/txt_14"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_eraser"
+                app:layout_constraintStart_toEndOf="@+id/btn_text"
+                app:layout_constraintTop_toTopOf="@+id/control_bg"
+                app:layout_constraintEnd_toStartOf="@+id/btn_crop"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+                android:id="@+id/btn_crop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_crop"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/txt_14"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_crop"
+                app:layout_constraintStart_toEndOf="@+id/btn_eraser"
+                app:layout_constraintTop_toTopOf="@+id/control_bg"
+                app:layout_constraintEnd_toStartOf="@+id/btn_emoji"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+                android:id="@+id/btn_emoji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_emji"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/txt_14"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_emoji"
+                app:layout_constraintStart_toEndOf="@+id/btn_crop"
+                app:layout_constraintTop_toTopOf="@+id/control_bg"
+                app:layout_constraintEnd_toStartOf="@+id/btn_sticker"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+                android:id="@+id/btn_sticker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_sticker"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/txt_14"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_sticker"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@+id/btn_emoji"
+                app:layout_constraintTop_toTopOf="@+id/control_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+                android:id="@+id/btn_filters"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_filter_btn"
+                android:paddingStart="@dimen/default_space"
+                android:paddingTop="@dimen/space_5"
+                android:paddingEnd="@dimen/default_space"
+                android:paddingBottom="@dimen/space_5"
+                android:text="@string/label_filters"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/txt_14"
+                android:gravity="center"
+                android:drawableStart="@drawable/ic_filter"
+                android:drawablePadding="@dimen/space_5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/control_bg"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_filters"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/colorPrimary"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/control_bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                tools:listitem="@layout/item_filter_view" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
